@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import image2 from "../../img/Star_Wars_Logo.svg.png"
+import image2 from "../../img/star-wars-logo.png"
 import { BtnFavorites } from "../component/BtnFavorites.jsx";
 
 export const Navbar = () => {
