@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import image2 from "../../img/Star_Wars_Logo.svg.png"
+import { BtnFavorites } from "../component/BtnFavorites.jsx";
 
 export const Navbar = () => {
 	return (
@@ -14,13 +15,7 @@ export const Navbar = () => {
 						<li className="nav-item"><Link className="nav-link link-secondary" to="/characters">Characters</Link> </li>
 						<li className="nav-item"><Link className="nav-link link-secondary" to="/planets">Planets</Link> </li>
 						<li className="nav-item"><Link className="nav-link link-secondary" to="/starships">Starships</Link> </li>
-						<li className="nav-item"><div className="dropdown"><button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Favorites<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">0</span></button>
-							<ul className="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
-								<li><span className="dropdown-item">No favorites selected</span>
-								</li>
-							</ul>
-						</div>
-						</li>
+						<li className="nav-item"><BtnFavorites/></li>
 					</ul>
 				</div>
 			</div>

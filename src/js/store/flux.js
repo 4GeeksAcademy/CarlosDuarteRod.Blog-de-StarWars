@@ -42,7 +42,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 						localStorage.setItem('planetsLocal', JSON.stringify(data))}
 					else { "Error" }
 				}
-			}
+			},
+			getStarships: async () => {
+				const url = "https://www.swapi.tech/api/starships"
+				const request = {
+					method: "GET"
+				}
+
+				if (localStorage.getItem("starshipsLocal") === null) {
+
+					const response = await fetch(url,request);
+					if (response.ok) {
+						const data = await response.json();	
+						localStorage.setItem('starshipsLocal', JSON.stringify(data))}
+					else { "Error" }
+				}
+			},
 		}
 	};
 };

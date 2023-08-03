@@ -1,9 +1,11 @@
-import React,{useState} from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Planets = () => {
 const [planets,setPlanets] =useState(JSON.parse(localStorage.getItem("planetsLocal")));
 const handleOnErrorImg = (e) => {e.target.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg"};
+const {store,actions} = useContext(Context);
 
 
     return (
@@ -26,9 +28,9 @@ const handleOnErrorImg = (e) => {e.target.src = "https://starwars-visualguide.co
                             <Link to={"/planets/" + item.uid} className="btn btn-secondary">
 							    Details
 							</Link>
-                                <Link class="btn btn-outline-warning" to="/characters">
-                                    <i class="far fa-heart fa-lg"></i>
-                                </Link>
+                            <button className="btn btn-danger" onClick={() => {actions.addFavorite(item.name)}}>
+                                    <i className="far fa-heart fa-lg"></i>
+                            </button>
                             </div>
                         </div>
                     </div>
